@@ -1,2 +1,7 @@
-.vscode/launch.json
-.vscode/tasks.json
+.vscode
+bin
+obj
+*.db
+appsettings.json
+launch.json
+tasks.json
