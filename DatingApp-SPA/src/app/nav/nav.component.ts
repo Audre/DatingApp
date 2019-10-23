@@ -9,17 +9,19 @@ import { AuthService } from '../_services/auth.service';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   login() {
-    this.authService.login(this.model).subscribe(next => {
-      console.log('logged in successfully');
-    }, error => {
-      console.log('Failed to log in');
-    });
+    this.authService.login(this.model).subscribe(
+      next => {
+        console.log('logged in successfully');
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   loggedIn() {
@@ -31,5 +33,4 @@ export class NavComponent implements OnInit {
     localStorage.removeItem('token');
     console.log('logged out');
   }
-
 }
